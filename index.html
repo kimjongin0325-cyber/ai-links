@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나의 AI 링크 모음</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+      color: #e0e0e0;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      color: #a0a0b0;
+    }
+
+    input#search {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+      margin: 20px auto;
+      padding: 10px 15px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1em;
+      outline: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .category {
+      margin-bottom: 40px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .category h2 {
+      font-size: 1.4em;
+      color: #a78bfa;
+      margin-bottom: 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .link-item:hover {
+      background: rgba(167,139,250,0.2);
+      transform: translateY(-3px);
+    }
+
+    .link-icon {
+      font-size: 1.4em;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      color: #888;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>나의 AI 링크 모음</h1>
+    <p>자주 사용하는 AI 사이트를 한눈에!</p>
+    <input type="text" id="search" placeholder="🔍 AI 툴 검색..." onkeyup="filterLinks()">
+  </header>
+
+  <div class="container">
+
+    <!-- 🔹 사이트 에이전트 -->
+    <section class="category">
+      <h2>사이트 에이전트</h2>
+      <div class="link-grid">
+        <a href="https://www.youtube.com/@tikitakadance" class="link-item" target="_blank"><div class="link-icon">💯</div><span>유튜브 크라운DC</span></a>
+        <a href="https://www.naver.com/" class="link-item" target="_blank"><div class="link-icon">🖼️</div><span>네이버</span></a>
+        <a href="https://aistudio.google.com/apps/drive/1aRW7y-kpscwD7QKyVQfP8Mf6vyuNjtSm" class="link-item" target="_blank"><div class="link-icon">📁</div><span>프롬프트이미지</span></a>
+        <a href="https://sketchfab.com/search?q=Camiloohh&type=models" class="link-item" target="_blank"><div class="link-icon">🔍</div><span>Sketchfab</span></a>
+        <a href="https://polyhaven.com/models/nature" class="link-item" target="_blank"><div class="link-icon">✨</div><span>Polyhaven</span></a>
+        <a href="https://free3d.com/" class="link-item" target="_blank"><div class="link-icon">🎨</div><span>Free3D</span></a>
+        <a href="https://www.blenderkit.com/" class="link-item" target="_blank"><div class="link-icon">🧠</div><span>Blenderkit</span></a>
+        <a href="https://www.cgtrader.com/" class="link-item" target="_blank"><div class="link-icon">💡</div><span>CGTrader</span></a>
+        <a href="https://aistudio.google.com/apps/drive/1mPb3JkiOmXuy9lYS8_f1RCK8PddITxZ3" class="link-item" target="_blank"><div class="link-icon">📹</div><span>시니어영상제작</span></a>
+      </div>
+    </section>
+
+    <!-- 🔹 AI 에이전트 -->
+    <section class="category">
+      <h2>AI 에이전트</h2>
+      <div class="link-grid">
+        <a href="https://chat.openai.com/" class="link-item" target="_blank"><div class="link-icon">🤖</div><span>ChatGPT</span></a>
+        <a href="https://gemini.google.com/" class="link-item" target="_blank"><div class="link-icon">♊️</div><span>Gemini</span></a>
+        <a href="https://www.perplexity.ai/" class="link-item" target="_blank"><div class="link-icon">🔍</div><span>Perplexity</span></a>
+        <a href="https://claude.ai/" class="link-item" target="_blank"><div class="link-icon">✨</div><span>Claude</span></a>
+        <a href="https://www.genspark.ai/" class="link-item" target="_blank"><div class="link-icon">💡</div><span>Genspark</span></a>
+      </div>
+    </section>
+
+    <!-- 🔹 이미지 생성 -->
+    <section class="category">
+      <h2>이미지 생성 AI</h2>
+      <div class="link-grid">
+        <a href="https://www.midjourney.com/" class="link-item" target="_blank"><div class="link-icon">🎨</div><span>Midjourney</span></a>
+        <a href="https://stablediffusionweb.com/" class="link-item" target="_blank"><div class="link-icon">🖌️</div><span>Stable Diffusion</span></a>
+        <a href="https://bfl.ai/models/flux-kontext" class="link-item" target="_blank"><div class="link-icon">➕</div><span>BFL</span></a>
+        <a href="https://qwenlm.github.io/" class="link-item" target="_blank"><div class="link-icon">🖼️</div><span>QwenLM</span></a>
+        <a href="https://dreamina.capcut.com/" class="link-item" target="_blank"><div class="link-icon">✏️</div><span>Dreamina</span></a>
+      </div>
+    </section>
+
+    <!-- 🔹 동영상 생성 -->
+    <section class="category">
+      <h2>동영상 생성 AI</h2>
+      <div class="link-grid">
+        <a href="https://sora.chatgpt.com/explore" class="link-item" target="_blank"><div class="link-icon">🎬</div><span>Sora</span></a>
+        <a href="https://runwayml.com/" class="link-item" target="_blank"><div class="link-icon">🎥</div><span>RunwayML</span></a>
+        <a href="https://pika.art/" class="link-item" target="_blank"><div class="link-icon">🎞️</div><span>Pika</span></a>
+        <a href="https://lumalabs.ai/" class="link-item" target="_blank"><div class="link-icon">✨</div><span>Luma Labs</span></a>
+        <a href="https://klingai.com/global/" class="link-item" target="_blank"><div class="link-icon">⚙️</div><span>Kling AI</span></a>
+      </div>
+    </section>
+
+    <!-- 🔹 음성/립싱크 -->
+    <section class="category">
+      <h2>음성/립싱크 AI</h2>
+      <div class="link-grid">
+        <a href="https://elevenlabs.io/" class="link-item" target="_blank"><div class="link-icon">🎙️</div><span>ElevenLabs</span></a>
+        <a href="https://typecast.ai/kr" class="link-item" target="_blank"><div class="link-icon">🎧</div><span>Typecast</span></a>
+        <a href="https://app.heygen.com/" class="link-item" target="_blank"><div class="link-icon">🪄</div><span>HeyGen</span></a>
+        <a href="https://www.hedra.com/" class="link-item" target="_blank"><div class="link-icon">💬</div><span>Hedra</span></a>
+        <a href="https://perso.ai/" class="link-item" target="_blank"><div class="link-icon">🗣️</div><span>Perso</span></a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>© 2025 My AI Links — All Rights Reserved</footer>
+
+  <script>
+    // 검색 필터
+    function filterLinks() {
+      const query = document.getElementById('search').value.toLowerCase();
+      const links = document.querySelectorAll('.link-item');
+      links.forEach(link => {
+        link.style.display = link.textContent.toLowerCase().includes(query) ? 'flex' : 'none';
+      });
+    }
+
+    // 카테고리 접기/펼치기
+    document.querySelectorAll('.category h2').forEach(title => {
+      title.addEventListener('click', () => {
+        const grid = title.nextElementSibling;
+        grid.classList.toggle('hidden');
+      });
+    });
+  </script>
+
+</body>
+</html>
